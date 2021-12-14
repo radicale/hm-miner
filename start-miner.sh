@@ -17,9 +17,9 @@ elif [ "$BALENA_DEVICE_TYPE" = "intel-nuc" ]; then
   OVERRIDE_CONFIG_URL="${5G_MINER_CONFIG_URL:-https://helium-assets.nebra.com/docker.config.5g}"
 fi
 
-wget \
-    -O "/opt/miner/releases/$HELIUM_GA_RELEASE/sys.config" \
-    "${OVERRIDE_CONFIG_URL}"
+# wget \
+#     -O "/opt/miner/releases/$HELIUM_GA_RELEASE/sys.config" \
+#     "${OVERRIDE_CONFIG_URL}"
 
 # Wait for the diagnostics app to be loaded
 until wget -q -T 10 -O - http://diagnostics:5000/initFile.txt > /dev/null 2>&1
