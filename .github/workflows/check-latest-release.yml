@@ -61,7 +61,7 @@ jobs:
         if: env.UPDATED == 'true'
         uses: peter-evans/repository-dispatch@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REPO_PAT }}
           event-type: miner-update
           repository: radicale/helium-miner-software
           client-payload: '{"sha": "${{ steps.push.outputs.commit-sha }}", "release": "${{ env.LATEST_GA }}_GA", "tag": "${{ env.LATEST_GA }}"}'
